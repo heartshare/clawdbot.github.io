@@ -17,6 +17,8 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 - **⚡ Fast Performance** - Optimized static site with instant loads
 - **🎭 Animated Background** - Dynamic gradient background with patterns
 - **📌 Sticky Header** - Header stays visible with scroll effects
+- **✅ Fixed Scrolling** - Proper scroll positioning with header offset
+- **🎯 Improved UI/UX** - Enhanced interactions, hover states, and transitions
 
 ### Platform Features
 - **🧠 Smart AI** - Powered by advanced language models with customizable personas
@@ -25,6 +27,32 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 - **🛠️ Extensible** - Build custom skills and tools
 - **🔒 Secure** - Self-hosted with full control over your data
 - **📱 Mobile Ready** - Responsive design for any device
+
+## 🔧 UI/UX Improvements
+
+### Scrolling Fixes
+- **Fixed Header Overlap** - Content now properly accounts for sticky header
+- **Scroll Offset** - Added `scroll-padding-top` to HTML for smooth navigation
+- **Section Spacing** - `scroll-margin-top` on sections for proper anchor positioning
+- **Smooth Scrolling** - Native smooth scrolling with proper offsets
+
+### Enhanced Interactions
+- **Improved Hover Effects** - Better feedback on all interactive elements
+- **Button States** - Active states with scale effects
+- **Menu Transitions** - Smooth sidebar toggle with cubic-bezier easing
+- **Focus States** - Clear focus indicators for accessibility
+
+### Mobile Optimizations
+- **Overlay System** - Backdrop overlay for mobile sidebar
+- **Touch-Friendly** - Larger tap targets on mobile
+- **Responsive Header** - Hides non-essential buttons on small screens
+- **Full-Width Sidebar** - Full-screen sidebar on mobile
+
+### Visual Enhancements
+- **Custom Scrollbars** - Styled scrollbars in sidebar
+- **Blur Backdrops** - Modern backdrop-filter effects
+- **Gradient Accents** - Subtle gradient backgrounds
+- **Active States** - Visual feedback for active menu items
 
 ## 📋 Sidebar Menu Structure
 
@@ -76,7 +104,7 @@ For organizations with advanced needs
 
 ## 📧 Contact Form
 
-Users can reach out via the contact form with:
+Users can reach out via contact form with:
 - Name
 - Email
 - Subject
@@ -90,8 +118,8 @@ This site is automatically deployed to GitHub Pages using GitHub Actions.
 
 The deployment is handled by `.github/workflows/deploy.yml` which:
 
-1. **Triggers** on pushes to the `main` branch
-2. **Builds** the static site (no build step needed for plain HTML/CSS)
+1. **Triggers** on pushes to `main` branch
+2. **Builds** static site (no build step needed for plain HTML/CSS)
 3. **Deploys** to GitHub Pages using official Actions
 
 ### Deployment Process
@@ -142,6 +170,14 @@ The site uses a design system inspired by shadcn/ui:
 - **Gradient animations** - Rotating gradients on stat cards
 - **Background patterns** - Subtle moving pattern overlay
 - **Button interactions** - Smooth transitions and transforms
+
+## ♿ Accessibility
+
+- **Semantic HTML** - Proper use of semantic elements
+- **ARIA Labels** - Screen reader support for interactive elements
+- **Focus Indicators** - Clear focus states for keyboard navigation
+- **Color Contrast** - WCAG AA compliant color ratios
+- **Touch Targets** - Adequately sized touch targets on mobile
 
 ## 🔧 Built with Clawdbot
 
