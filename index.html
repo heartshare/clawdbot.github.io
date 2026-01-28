@@ -16,7 +16,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
+            scroll-padding-top: 20px;
         }
 
         :root {
@@ -76,33 +76,33 @@
             flex-direction: column;
             transition: background 0.3s ease, color 0.3s ease;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         /* Custom Scrollbar - Always Visible */
         * {
-            scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
+            scrollbar-width: auto;
+            scrollbar-color: var(--muted-foreground) var(--secondary);
         }
 
         *::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
         }
 
         *::-webkit-scrollbar-track {
             background: var(--secondary);
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         *::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 4px;
+            background: var(--muted-foreground);
+            border-radius: 6px;
+            border: 2px solid var(--secondary);
             transition: background 0.2s ease;
         }
 
         *::-webkit-scrollbar-thumb:hover {
-            background: var(--muted-foreground);
+            background: var(--foreground);
         }
 
         /* Hero Background */
@@ -136,17 +136,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
             background: var(--background);
             z-index: 1000;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            transition: box-shadow 0.3s ease;
-        }
-
-        header.scrolled {
-            box-shadow: var(--shadow-lg);
         }
 
         .header-left {
@@ -246,8 +239,8 @@
             border-right: 1px solid var(--border);
             padding: 1.5rem;
             position: sticky;
-            top: var(--header-height);
-            height: calc(100vh - var(--header-height));
+            top: 0;
+            height: 100vh;
             overflow-y: auto;
             background: var(--background);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -405,7 +398,7 @@
         /* Sections */
         .section {
             margin-bottom: 4rem;
-            scroll-margin-top: calc(var(--header-height) + 2rem);
+            scroll-margin-top: 2rem;
         }
 
         .section-title {
@@ -821,8 +814,8 @@
             aside {
                 position: fixed;
                 left: -300px;
-                top: var(--header-height);
-                height: calc(100vh - var(--header-height));
+                top: 69px;
+                height: calc(100vh - 69px);
                 padding-top: 1.5rem;
                 box-shadow: var(--shadow-lg);
                 background: var(--background);
@@ -1326,21 +1319,6 @@
                     }
                 }
             });
-        });
-
-        // Header scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            lastScroll = currentScroll;
         });
 
         // Form submission
