@@ -162,6 +162,7 @@ The site uses a design system inspired by shadcn/ui:
 - **Gradient Accents** - Subtle gradient backgrounds
 - **Active States** - Visual feedback for active menu items
 - **Fixed Header** - Header stays at top without overlapping content
+- **Back to Top Button** - Floating button at bottom right for quick navigation
 
 ### Mobile Optimizations
 - **Full-Screen Menu** - Mobile navigation takes full screen
