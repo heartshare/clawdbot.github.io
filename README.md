@@ -49,7 +49,7 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 - **Full-Width Sidebar** - Full-screen sidebar on mobile
 
 ### Visual Enhancements
-- **Custom Scrollbars** - Styled scrollbars in sidebar
+- **Custom Scrollbars** - Always-visible slim scrollbars across entire site
 - **Blur Backdrops** - Modern backdrop-filter effects
 - **Gradient Accents** - Subtle gradient backgrounds
 - **Active States** - Visual feedback for active menu items
