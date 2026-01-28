@@ -12,12 +12,12 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 - **🎨 Shadcn-style UI** - Clean, minimal design with modern aesthetics
 - **📱 Responsive Layout** - Mobile-first design that works on all devices
 - **🌙 Dark Mode** - Theme toggle with localStorage persistence
-- **🧭 Sidebar Navigation** - Collapsible sidebar with organized menu sections
+- **🧭 Mega Dropdown Navigation** - Top navigation with organized dropdown menus
 - **🎬 Smooth Animations** - Fade-in effects on scroll
 - **⚡ Fast Performance** - Optimized static site with instant loads
 - **🎭 Animated Background** - Dynamic gradient background with patterns
-- **📌 Sticky Header** - Header stays visible with scroll effects
-- **✅ Fixed Scrolling** - Proper scroll positioning with header offset
+- **📌 Fixed Header** - Header stays at top with blur backdrop
+- **✅ Smooth Scrolling** - Proper scroll positioning with header offset
 - **🎯 Improved UI/UX** - Enhanced interactions, hover states, and transitions
 
 ### Platform Features
@@ -28,53 +28,26 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 - **🔒 Secure** - Self-hosted with full control over your data
 - **📱 Mobile Ready** - Responsive design for any device
 
-## 🔧 UI/UX Improvements
+## 🧭 Navigation Structure
 
-### Scrolling Fixes
-- **Fixed Header Overlap** - Content now properly accounts for sticky header
-- **Scroll Offset** - Added `scroll-padding-top` to HTML for smooth navigation
-- **Section Spacing** - `scroll-margin-top` on sections for proper anchor positioning
-- **Smooth Scrolling** - Native smooth scrolling with proper offsets
+The site features a top mega dropdown navigation with:
 
-### Enhanced Interactions
-- **Improved Hover Effects** - Better feedback on all interactive elements
-- **Button States** - Active states with scale effects
-- **Menu Transitions** - Smooth sidebar toggle with cubic-bezier easing
-- **Focus States** - Clear focus indicators for accessibility
-
-### Mobile Optimizations
-- **Overlay System** - Backdrop overlay for mobile sidebar
-- **Touch-Friendly** - Larger tap targets on mobile
-- **Responsive Header** - Hides non-essential buttons on small screens
-- **Full-Width Sidebar** - Full-screen sidebar on mobile
-
-### Visual Enhancements
-- **Custom Scrollbars** - Always-visible, prominent scrollbars across entire site (12px width)
-- **Blur Backdrops** - Modern backdrop-filter effects
-- **Gradient Accents** - Subtle gradient backgrounds
-- **Active States** - Visual feedback for active menu items
-- **Non-Sticky Header** - Fixed header that doesn't overlap content
-
-## 📋 Sidebar Menu Structure
-
-The site features an organized sidebar with:
-
-### Overview
+### Top Navigation
 - **Home** - Main landing page with hero section
-- **Features** - 6 feature cards with detailed descriptions
-- **Statistics** - Animated statistics display
-- **Pricing** - 3 pricing plans with feature comparison
-- **Use Cases** - 6 practical use case examples
-- **Contact Us** - Contact form for inquiries
+- **Features** - Dropdown with 6 feature links (Smart AI, Multi-Platform, Fast Response, Extensible, Secure, Mobile Ready)
+- **Pricing** - Direct link to pricing section
+- **Use Cases** - Direct link to use cases section
+- **Contact** - Direct link to contact form
+- **Resources** - Dropdown with 4 resource links (GitHub, Documentation, Discord, ClawdHub)
 
-### Resources
-- **Links** - External resources and documentation
+### Mega Dropdown Menus
+- **Features Dropdown** - Quick access to all features with icons
+- **Resources Dropdown** - External resources with badges (GitHub with "New" badge)
 
-### Community
-- **GitHub** - Source code repository
-- **Discord** - Community chat
-- **Docs** - Documentation site
-- **ClawdHub** - Skills marketplace
+### Mobile Navigation
+- Full-screen mobile menu with organized sections
+- Overlay backdrop when menu is open
+- Close button for easy dismissal
 
 ## 💰 Pricing Plans
 
@@ -158,11 +131,11 @@ The site uses a design system inspired by shadcn/ui:
 ### Components
 - **Cards** - Clean borders with hover shadows and gradient top bar
 - **Buttons** - Rounded corners, hover effects, and shadow
-- **Sidebar** - Organized sections with icons and badges
+- **Mega Dropdown** - Organized dropdowns with icons and sections
 - **Navigation** - Smooth scrolling with active states
 - **Pricing Cards** - Featured plan highlighting and comparison
 - **Contact Form** - Clean inputs with focus states
-- **Header** - Sticky with blur backdrop and scroll effects
+- **Header** - Fixed with blur backdrop and mega dropdowns
 - **Animated Background** - Dynamic gradient with moving patterns
 
 ### Animations
@@ -171,6 +144,37 @@ The site uses a design system inspired by shadcn/ui:
 - **Gradient animations** - Rotating gradients on stat cards
 - **Background patterns** - Subtle moving pattern overlay
 - **Button interactions** - Smooth transitions and transforms
+- **Dropdown animations** - Smooth fade and slide effects
+- **Arrow rotation** - Dropdown arrows rotate on hover
+
+### Navigation Features
+- **Mega Dropdowns** - Large dropdown menus with organized sections
+- **Hover Triggers** - Dropdowns appear on hover
+- **Icons & Badges** - Visual indicators and status badges
+- **Active States** - Visual feedback for current section
+- **Mobile Menu** - Full-screen navigation for mobile
+- **Overlay System** - Backdrop overlay for mobile menu
+- **Scroll Spy** - Active menu updates on scroll
+
+### Visual Enhancements
+- **Custom Scrollbars** - Always-visible, prominent scrollbars across entire site (12px width)
+- **Blur Backdrops** - Modern backdrop-filter effects
+- **Gradient Accents** - Subtle gradient backgrounds
+- **Active States** - Visual feedback for active menu items
+- **Fixed Header** - Header stays at top without overlapping content
+
+### Mobile Optimizations
+- **Full-Screen Menu** - Mobile navigation takes full screen
+- **Overlay System** - Backdrop overlay when menu is open
+- **Touch-Friendly** - Larger tap targets and better spacing
+- **Responsive Header** - Hides non-essential buttons on small screens
+- **Close Button** - Easy-to-close button on mobile menu
+
+### Desktop Navigation
+- **Top Mega Menu** - Dropdown menus that appear on hover
+- **Organized Sections** - Dropdowns have clear section dividers
+- **Icons & Badges** - Visual elements for quick recognition
+- **Smooth Transitions** - Elegant animations for all interactions
 
 ## ♿ Accessibility
 
@@ -179,6 +183,8 @@ The site uses a design system inspired by shadcn/ui:
 - **Focus Indicators** - Clear focus states for keyboard navigation
 - **Color Contrast** - WCAG AA compliant color ratios
 - **Touch Targets** - Adequately sized touch targets on mobile
+- **Keyboard Navigation** - All menus accessible via keyboard
+- **Skip Links** - Skip to content for screen readers
 
 ## 🔧 Built with Clawdbot
 
