@@ -8,12 +8,40 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 
 ## ✨ Features
 
+### Design & UX
+- **🎨 Shadcn-style UI** - Clean, minimal design with modern aesthetics
+- **📱 Responsive Layout** - Mobile-first design that works on all devices
+- **🌙 Dark Mode** - Theme toggle with localStorage persistence
+- **🧭 Sidebar Navigation** - Collapsible sidebar with organized menu sections
+- **🎬 Smooth Animations** - Fade-in effects on scroll
+- **⚡ Fast Performance** - Optimized static site with instant loads
+
+### Platform Features
 - **🧠 Smart AI** - Powered by advanced language models with customizable personas
 - **🔌 Multi-Platform** - Connect to Telegram, WhatsApp, Discord, Slack, and more
 - **⚡ Fast Response** - Low-latency responses with streaming support
 - **🛠️ Extensible** - Build custom skills and tools
 - **🔒 Secure** - Self-hosted with full control over your data
 - **📱 Mobile Ready** - Responsive design for any device
+
+## 📋 Sidebar Menu Structure
+
+The site features an organized sidebar with:
+
+### Overview
+- **Home** - Main landing page
+- **Features** - 6 feature cards with detailed descriptions
+- **Statistics** - Animated statistics display
+
+### Resources
+- **Use Cases** - 6 practical use case examples
+- **Links** - External resources and documentation
+
+### Community
+- **GitHub** - Source code repository
+- **Discord** - Community chat
+- **Docs** - Documentation site
+- **ClawdHub** - Skills marketplace
 
 ## 🚀 Deployment
 
@@ -41,34 +69,29 @@ The workflow automatically runs and deploys within 1-2 minutes.
 ## 📝 Tech Stack
 
 - HTML5
-- CSS3 (Modern features: CSS Grid, Flexbox, Custom Properties)
-- JavaScript (Vanilla ES6+)
+- CSS3 (Custom Properties, Grid, Flexbox)
+- JavaScript (Vanilla ES6+, no dependencies)
 - Google Fonts (Inter)
 - GitHub Actions
 - GitHub Pages
 
-## 🎨 Site Features
+## 🎨 Design System
 
-### User Interface
-- **Navigation Bar** - Sticky navigation with smooth scrolling
-- **Dark Mode Toggle** - Theme switcher with localStorage persistence
-- **Hero Section** - Eye-catching gradient with call-to-action buttons
-- **Feature Grid** - 6 feature cards with hover effects
-- **Stats Section** - Animated statistics display
-- **Use Cases** - 6 use case examples with detailed descriptions
-- **Links Section** - External resources and documentation links
-- **Footer** - Social links and attribution
+The site uses a design system inspired by shadcn/ui:
 
-### Animations
-- Fade-in animations on scroll (Intersection Observer)
-- Smooth hover effects on cards
-- Animated background patterns
-- Button hover states
+### Color Palette
+- **Primary:** #667eea (Purple gradient)
+- **Background:** White / Dark (#09090b)
+- **Foreground:** Black (#09090b) / White (#fafafa)
+- **Border:** #e4e4e7 / Dark (#27272a)
+- **Muted:** #f4f4f5 / Dark (#27272a)
+- **Muted Foreground:** #71717a / Dark (#a1a1aa)
 
-### Responsive Design
-- Mobile-first approach
-- Breakpoints at 768px and 1200px
-- Optimized for all screen sizes
+### Components
+- **Cards** - Clean borders with hover shadows
+- **Buttons** - Rounded corners, subtle hover effects
+- **Sidebar** - Organized sections with icons
+- **Navigation** - Smooth scrolling with active states
 
 ## 🔧 Built with Clawdbot
 
