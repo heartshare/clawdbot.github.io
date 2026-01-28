@@ -148,30 +148,6 @@
             gap: 1rem;
         }
 
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: 1px solid var(--border);
-            padding: 0.5rem;
-            border-radius: var(--radius);
-            cursor: pointer;
-            color: var(--foreground);
-            font-size: 1.25rem;
-            transition: all 0.2s ease;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-        }
-
-        .menu-toggle:hover {
-            background: var(--secondary);
-        }
-
-        .menu-toggle:active {
-            transform: scale(0.95);
-        }
-
         .logo {
             font-size: 1.25rem;
             font-weight: 700;
@@ -189,6 +165,133 @@
             gap: 0.75rem;
         }
 
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            padding: 0.625rem 1rem;
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-link:hover {
+            background: var(--secondary);
+        }
+
+        .nav-link.active {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .nav-link .dropdown-arrow {
+            font-size: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-link:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Mega Dropdown */
+        .mega-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            padding: 1.5rem;
+            min-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+            z-index: 999;
+        }
+
+        .nav-item:hover .mega-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mega-dropdown-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .mega-dropdown-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .mega-dropdown-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted-foreground);
+            margin-bottom: 0.75rem;
+        }
+
+        .mega-dropdown-links {
+            list-style: none;
+        }
+
+        .mega-dropdown-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            color: var(--foreground);
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            margin-bottom: 0.125rem;
+        }
+
+        .mega-dropdown-links a:hover {
+            background: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        .mega-dropdown-links a .icon {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .mega-badge {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        /* Header Buttons */
         .header-btn {
             background: none;
             border: 1px solid var(--border);
@@ -224,91 +327,6 @@
         .header-btn.primary:hover {
             background: #5568d3;
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Layout */
-        .layout {
-            display: flex;
-            flex: 1;
-            position: relative;
-        }
-
-        /* Sidebar */
-        aside {
-            width: 280px;
-            border-right: 1px solid var(--border);
-            padding: 1.5rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-            background: var(--background);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-        }
-
-        .sidebar-section {
-            margin-bottom: 2rem;
-        }
-
-        .sidebar-title {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--muted-foreground);
-            margin-bottom: 0.75rem;
-            padding: 0 0.75rem;
-        }
-
-        .sidebar-menu {
-            list-style: none;
-        }
-
-        .sidebar-menu a {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 0.875rem;
-            color: var(--foreground);
-            text-decoration: none;
-            border-radius: var(--radius);
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            margin-bottom: 0.25rem;
-        }
-
-        .sidebar-menu a:hover {
-            background: var(--secondary);
-            transform: translateX(4px);
-        }
-
-        .sidebar-menu a.active {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            color: var(--primary);
-            font-weight: 600;
-            border-left: 3px solid var(--primary);
-        }
-
-        .sidebar-menu a .icon {
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .sidebar-badge {
-            background: var(--primary);
-            color: var(--primary-foreground);
-            padding: 0.125rem 0.5rem;
-            border-radius: 9999px;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            margin-left: auto;
-            flex-shrink: 0;
         }
 
         /* Main Content */
@@ -782,8 +800,68 @@
             text-decoration: underline;
         }
 
-        /* Overlay for mobile sidebar */
-        .overlay {
+        /* Mobile Menu Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            color: var(--foreground);
+            font-size: 1.25rem;
+            transition: all 0.2s ease;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--secondary);
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--background);
+            z-index: 999;
+            padding: 5rem 1.5rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            color: var(--foreground);
+            font-size: 1.25rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .mobile-nav-overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -792,40 +870,59 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             z-index: 998;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .overlay.active {
+        .mobile-nav-overlay.active {
             display: block;
-            opacity: 1;
+        }
+
+        .mobile-nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+        }
+
+        .mobile-nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            color: var(--foreground);
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav-links a .icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            html {
-                scroll-padding-top: 60px;
+            nav {
+                display: none;
             }
 
-            header {
-                padding: 0.75rem 1rem;
-            }
-
-            aside {
-                position: fixed;
-                left: -300px;
-                top: 69px;
-                height: calc(100vh - 69px);
-                padding-top: 1.5rem;
-                box-shadow: var(--shadow-lg);
-                background: var(--background);
-            }
-
-            aside.open {
-                transform: translateX(300px);
-            }
-
-            .menu-toggle {
+            .mobile-menu-toggle {
                 display: flex;
             }
 
@@ -850,19 +947,11 @@
             .pricing-card.popular:hover {
                 transform: translateY(-8px);
             }
-
-            .overlay.active {
-                display: block;
-            }
         }
 
         @media (max-width: 640px) {
-            :root {
-                --header-height: 57px;
-            }
-
             header {
-                padding: 0.5rem 0.75rem;
+                padding: 0.75rem 1rem;
             }
 
             .header-right {
@@ -904,17 +993,12 @@
                 justify-content: center;
             }
 
-            aside {
-                width: 100%;
-                left: -100%;
-            }
-
-            aside.open {
-                transform: translateX(100%);
-            }
-
             main {
                 padding: 1rem;
+            }
+
+            .mobile-nav-close {
+                display: flex;
             }
         }
 
@@ -946,303 +1030,301 @@
 <body class="hero-bg">
     <header>
         <div class="header-left">
-            <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
-                ☰
-            </button>
             <a href="#home" class="logo">
                 <span>🤖</span>
                 <span>Clawdbot</span>
             </a>
         </div>
+        <nav>
+            <div class="nav-item">
+                <a href="#home" class="nav-link active" onclick="setActive(this)">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#features" class="nav-link" onclick="setActive(this)">
+                    Features
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="mega-dropdown">
+                    <div class="mega-dropdown-section">
+                        <div class="mega-dropdown-title">Features</div>
+                        <ul class="mega-dropdown-links">
+                            <li><a href="#features" onclick="setActive(this)"><span class="icon">✨</span><span>Smart AI</span></a></li>
+                            <li><a href="#features" onclick="setActive(this)"><span class="icon">🔌</span><span>Multi-Platform</span></a></li>
+                            <li><a href="#features" onclick="setActive(this)"><span class="icon">⚡</span><span>Fast Response</span></a></li>
+                            <li><a href="#features" onclick="setActive(this)"><span class="icon">🛠️</span><span>Extensible</span></a></li>
+                            <li><a href="#features" onclick="setActive(this)"><span class="icon">🔒</span><span>Secure</span></a></li>
+                            <li><a href="#features" onclick="setActive(this)"><span class="icon">📱</span><span>Mobile Ready</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#pricing" class="nav-link" onclick="setActive(this)">Pricing</a>
+            </div>
+            <div class="nav-item">
+                <a href="#use-cases" class="nav-link" onclick="setActive(this)">Use Cases</a>
+            </div>
+            <div class="nav-item">
+                <a href="#contact" class="nav-link" onclick="setActive(this)">Contact</a>
+            </div>
+            <div class="nav-item">
+                <a href="#links" class="nav-link" onclick="setActive(this)">
+                    Resources
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="mega-dropdown">
+                    <div class="mega-dropdown-section">
+                        <div class="mega-dropdown-title">Resources</div>
+                        <ul class="mega-dropdown-links">
+                            <li><a href="https://github.com/clawdbot/clawdbot" target="_blank"><span class="icon">🐙</span><span>GitHub Repository</span><span class="mega-badge">New</span></a></li>
+                            <li><a href="https://docs.clawd.bot" target="_blank"><span class="icon">📚</span><span>Documentation</span></a></li>
+                            <li><a href="https://discord.com/invite/clawd" target="_blank"><span class="icon">💬</span><span>Discord Community</span></a></li>
+                            <li><a href="https://clawdhub.com" target="_blank"><span class="icon">🎯</span><span>ClawdHub</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
         <div class="header-right">
-            <button class="header-btn" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">
-                🌙
-            </button>
+            <button class="header-btn" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">🌙</button>
             <a href="https://github.com/clawdbot/clawdbot" target="_blank" class="header-btn">
                 <span>⭐</span>
                 <span>Star</span>
             </a>
-            <a href="#pricing" class="header-btn">
-                <span>💰</span>
-                <span>Pricing</span>
-            </a>
             <a href="https://docs.clawd.bot" target="_blank" class="header-btn primary">
                 <span>Get Started</span>
             </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
         </div>
     </header>
 
-    <div class="layout">
-        <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-        <aside id="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">Overview</div>
-                <ul class="sidebar-menu">
-                    <li><a href="#home" class="active" onclick="setActive(this)">
-                        <span class="icon">🏠</span>
-                        <span>Home</span>
-                    </a></li>
-                    <li><a href="#features" onclick="setActive(this)">
-                        <span class="icon">✨</span>
-                        <span>Features</span>
-                        <span class="sidebar-badge">6</span>
-                    </a></li>
-                    <li><a href="#stats" onclick="setActive(this)">
-                        <span class="icon">📊</span>
-                        <span>Statistics</span>
-                    </a></li>
-                    <li><a href="#pricing" onclick="setActive(this)">
-                        <span class="icon">💰</span>
-                        <span>Pricing</span>
-                    </a></li>
-                    <li><a href="#use-cases" onclick="setActive(this)">
-                        <span class="icon">💡</span>
-                        <span>Use Cases</span>
-                    </a></li>
-                    <li><a href="#contact" onclick="setActive(this)">
-                        <span class="icon">📧</span>
-                        <span>Contact Us</span>
-                    </a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">Resources</div>
-                <ul class="sidebar-menu">
-                    <li><a href="#links" onclick="setActive(this)">
-                        <span class="icon">🔗</span>
-                        <span>Links</span>
-                    </a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">Community</div>
-                <ul class="sidebar-menu">
-                    <li><a href="https://github.com/clawdbot/clawdbot" target="_blank">
-                        <span class="icon">🐙</span>
-                        <span>GitHub</span>
-                    </a></li>
-                    <li><a href="https://discord.com/invite/clawd" target="_blank">
-                        <span class="icon">💬</span>
-                        <span>Discord</span>
-                        <span class="sidebar-badge">New</span>
-                    </a></li>
-                    <li><a href="https://docs.clawd.bot" target="_blank">
-                        <span class="icon">📚</span>
-                        <span>Docs</span>
-                    </a></li>
-                    <li><a href="https://clawdhub.com" target="_blank">
-                        <span class="icon">🎯</span>
-                        <span>ClawdHub</span>
-                    </a></li>
-                </ul>
-            </div>
-        </aside>
-
-        <main id="main">
-            <div class="page-header" id="home">
-                <h1 class="page-title">Your AI Assistant Platform</h1>
-                <p class="page-description">Powerful automation, intelligent conversations, and seamless integration</p>
-                <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary">
-                        <span>💰</span>
-                        <span>View Pricing</span>
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <span>📧</span>
-                        <span>Contact Us</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="section" id="features">
-                <h2 class="section-title">Features</h2>
-                <p class="section-subtitle">Everything you need in an AI assistant platform</p>
-                <div class="feature-grid">
-                    <div class="card animate-in">
-                        <div class="card-icon">🧠</div>
-                        <h3>Smart AI</h3>
-                        <p>Powered by advanced language models with customizable personas and behaviors</p>
-                    </div>
-                    <div class="card animate-in delay-1">
-                        <div class="card-icon">🔌</div>
-                        <h3>Multi-Platform</h3>
-                        <p>Connect to Telegram, WhatsApp, Discord, Slack, and more</p>
-                    </div>
-                    <div class="card animate-in delay-2">
-                        <div class="card-icon">⚡</div>
-                        <h3>Fast Response</h3>
-                        <p>Low-latency responses with streaming support for real-time conversations</p>
-                    </div>
-                    <div class="card animate-in delay-3">
-                        <div class="card-icon">🛠️</div>
-                        <h3>Extensible</h3>
-                        <p>Build custom skills and tools to automate your unique workflows</p>
-                    </div>
-                    <div class="card animate-in delay-4">
-                        <div class="card-icon">🔒</div>
-                        <h3>Secure</h3>
-                        <p>Your data stays private. Self-hosted with full control</p>
-                    </div>
-                    <div class="card animate-in delay-5">
-                        <div class="card-icon">📱</div>
-                        <h3>Mobile Ready</h3>
-                        <p>Responsive design that works perfectly on any device</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="stats">
-                <h2 class="section-title">Statistics</h2>
-                <div class="stats-container">
-                    <div class="stat-card animate-in">
-                        <div class="value">10+</div>
-                        <div class="label">Platform Integrations</div>
-                    </div>
-                    <div class="stat-card animate-in delay-1">
-                        <div class="value">50+</div>
-                        <div class="label">Built-in Skills</div>
-                    </div>
-                    <div class="stat-card animate-in delay-2">
-                        <div class="value">∞</div>
-                        <div class="label">Customization Options</div>
-                    </div>
-                    <div class="stat-card animate-in delay-3">
-                        <div class="value">100%</div>
-                        <div class="label">Open Source</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="pricing">
-                <h2 class="section-title">Pricing</h2>
-                <p class="section-subtitle">Choose the plan that works for you</p>
-                <div class="pricing-grid">
-                    <div class="pricing-card animate-in">
-                        <div class="pricing-tier">Free</div>
-                        <div class="pricing-price">$0<span>/month</span></div>
-                        <p class="pricing-description">Perfect for personal use and small projects</p>
-                        <ul class="pricing-features">
-                            <li>1 platform integration</li>
-                            <li>10 custom skills</li>
-                            <li>Community support</li>
-                            <li>Basic analytics</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Get Started</a>
-                    </div>
-                    <div class="pricing-card popular animate-in delay-1">
-                        <div class="pricing-tier">Pro</div>
-                        <div class="pricing-price">$29<span>/month</span></div>
-                        <p class="pricing-description">For power users and growing teams</p>
-                        <ul class="pricing-features">
-                            <li>Unlimited platforms</li>
-                            <li>Unlimited skills</li>
-                            <li>Priority support</li>
-                            <li>Advanced analytics</li>
-                            <li>API access</li>
-                            <li>Custom branding</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Started</a>
-                    </div>
-                    <div class="pricing-card animate-in delay-2">
-                        <div class="pricing-tier">Enterprise</div>
-                        <div class="pricing-price">$99<span>/month</span></div>
-                        <p class="pricing-description">For organizations with advanced needs</p>
-                        <ul class="pricing-features">
-                            <li>Everything in Pro</li>
-                            <li>Dedicated support</li>
-                            <li>SLA guarantee</li>
-                            <li>Custom integrations</li>
-                            <li>On-premise deployment</li>
-                            <li>Training & onboarding</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Contact Sales</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="use-cases">
-                <h2 class="section-title">Use Cases</h2>
-                <p class="section-subtitle">Unlock productivity with intelligent automation</p>
-                <div class="use-cases-grid">
-                    <div class="use-case-card animate-in">
-                        <h3>📋 Task Automation</h3>
-                        <p>Automate repetitive tasks, send reminders, and manage schedules with natural language commands</p>
-                    </div>
-                    <div class="use-case-card animate-in delay-1">
-                        <h3>🔍 Research Assistant</h3>
-                        <p>Get instant answers from the web, search academic papers, and extract information from documents</p>
-                    </div>
-                    <div class="use-case-card animate-in delay-2">
-                        <h3>💬 Smart Conversations</h3>
-                        <p>Engage in natural, contextual conversations with memory and personality</p>
-                    </div>
-                    <div class="use-case-card animate-in delay-3">
-                        <h3>🎨 Content Creation</h3>
-                        <p>Generate text, summarize documents, and create content across multiple platforms</p>
-                    </div>
-                    <div class="use-case-card animate-in delay-4">
-                        <h3>🌐 Browser Control</h3>
-                        <p>Automate web interactions, fill forms, take screenshots, and test applications</p>
-                    </div>
-                    <div class="use-case-card animate-in delay-5">
-                        <h3>🏠 Smart Home</h3>
-                        <p>Connect to paired nodes, control devices, send notifications, and more</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="content">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="section-subtitle">Get in touch with our team</p>
-                <form class="contact-form animate-in" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label class="form-label" for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="message">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us more..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <span>📧</span>
-                        <span>Send Message</span>
-                    </button>
-                </form>
-            </div>
-
-            <div class="section" id="links">
-                <h2 class="section-title">Quick Links</h2>
-                <div class="links-grid">
-                    <a href="https://github.com/clawdbot/clawdbot" target="_blank" class="link-card animate-in">
-                        <h3>📦 GitHub Repository</h3>
-                        <p>Source code, issues, and contributions</p>
-                    </a>
-                    <a href="https://docs.clawd.bot" target="_blank" class="link-card animate-in delay-1">
-                        <h3>📚 Documentation</h3>
-                        <p>Installation, configuration, and guides</p>
-                    </a>
-                    <a href="https://discord.com/invite/clawd" target="_blank" class="link-card animate-in delay-2">
-                        <h3>💬 Discord Community</h3>
-                        <p>Join discussions and get help</p>
-                    </a>
-                    <a href="https://clawdhub.com" target="_blank" class="link-card animate-in delay-3">
-                        <h3>🎯 ClawdHub</h3>
-                        <p>Discover skills and integrations</p>
-                    </a>
-                </div>
-            </div>
-        </main>
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
+        <div class="mobile-nav-section">
+            <div class="mobile-nav-title">Overview</div>
+            <ul class="mobile-nav-links">
+                <li><a href="#home" onclick="closeMobileNav()"><span class="icon">🏠</span><span>Home</span></a></li>
+                <li><a href="#features" onclick="closeMobileNav()"><span class="icon">✨</span><span>Features</span></a></li>
+                <li><a href="#pricing" onclick="closeMobileNav()"><span class="icon">💰</span><span>Pricing</span></a></li>
+                <li><a href="#use-cases" onclick="closeMobileNav()"><span class="icon">💡</span><span>Use Cases</span></a></li>
+                <li><a href="#contact" onclick="closeMobileNav()"><span class="icon">📧</span><span>Contact</span></a></li>
+            </ul>
+        </div>
+        <div class="mobile-nav-section">
+            <div class="mobile-nav-title">Resources</div>
+            <ul class="mobile-nav-links">
+                <li><a href="#links" onclick="closeMobileNav()"><span class="icon">🔗</span><span>Links</span></a></li>
+                <li><a href="https://github.com/clawdbot/clawdbot" target="_blank"><span class="icon">🐙</span><span>GitHub</span></a></li>
+                <li><a href="https://discord.com/invite/clawd" target="_blank"><span class="icon">💬</span><span>Discord</span></a></li>
+                <li><a href="https://docs.clawd.bot" target="_blank"><span class="icon">📚</span><span>Docs</span></a></li>
+                <li><a href="https://clawdhub.com" target="_blank"><span class="icon">🎯</span><span>ClawdHub</span></a></li>
+            </ul>
+        </div>
     </div>
+
+    <main id="main">
+        <div class="page-header" id="home">
+            <h1 class="page-title">Your AI Assistant Platform</h1>
+            <p class="page-description">Powerful automation, intelligent conversations, and seamless integration</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary">
+                    <span>💰</span>
+                    <span>View Pricing</span>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>📧</span>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section" id="features">
+            <h2 class="section-title">Features</h2>
+            <p class="section-subtitle">Everything you need in an AI assistant platform</p>
+            <div class="feature-grid">
+                <div class="card animate-in">
+                    <div class="card-icon">🧠</div>
+                    <h3>Smart AI</h3>
+                    <p>Powered by advanced language models with customizable personas and behaviors</p>
+                </div>
+                <div class="card animate-in delay-1">
+                    <div class="card-icon">🔌</div>
+                    <h3>Multi-Platform</h3>
+                    <p>Connect to Telegram, WhatsApp, Discord, Slack, and more</p>
+                </div>
+                <div class="card animate-in delay-2">
+                    <div class="card-icon">⚡</div>
+                    <h3>Fast Response</h3>
+                    <p>Low-latency responses with streaming support for real-time conversations</p>
+                </div>
+                <div class="card animate-in delay-3">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Extensible</h3>
+                    <p>Build custom skills and tools to automate your unique workflows</p>
+                </div>
+                <div class="card animate-in delay-4">
+                    <div class="card-icon">🔒</div>
+                    <h3>Secure</h3>
+                    <p>Your data stays private. Self-hosted with full control</p>
+                </div>
+                <div class="card animate-in delay-5">
+                    <div class="card-icon">📱</div>
+                    <h3>Mobile Ready</h3>
+                    <p>Responsive design that works perfectly on any device</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="stats">
+            <h2 class="section-title">Statistics</h2>
+            <div class="stats-container">
+                <div class="stat-card animate-in">
+                    <div class="value">10+</div>
+                    <div class="label">Platform Integrations</div>
+                </div>
+                <div class="stat-card animate-in delay-1">
+                    <div class="value">50+</div>
+                    <div class="label">Built-in Skills</div>
+                </div>
+                <div class="stat-card animate-in delay-2">
+                    <div class="value">∞</div>
+                    <div class="label">Customization Options</div>
+                </div>
+                <div class="stat-card animate-in delay-3">
+                    <div class="value">100%</div>
+                    <div class="label">Open Source</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="pricing">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">Choose the plan that works for you</p>
+            <div class="pricing-grid">
+                <div class="pricing-card animate-in">
+                    <div class="pricing-tier">Free</div>
+                    <div class="pricing-price">$0<span>/month</span></div>
+                    <p class="pricing-description">Perfect for personal use and small projects</p>
+                    <ul class="pricing-features">
+                        <li>1 platform integration</li>
+                        <li>10 custom skills</li>
+                        <li>Community support</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Get Started</a>
+                </div>
+                <div class="pricing-card popular animate-in delay-1">
+                    <div class="pricing-tier">Pro</div>
+                    <div class="pricing-price">$29<span>/month</span></div>
+                    <p class="pricing-description">For power users and growing teams</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited platforms</li>
+                        <li>Unlimited skills</li>
+                        <li>Priority support</li>
+                        <li>Advanced analytics</li>
+                        <li>API access</li>
+                        <li>Custom branding</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Started</a>
+                </div>
+                <div class="pricing-card animate-in delay-2">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-price">$99<span>/month</span></div>
+                    <p class="pricing-description">For organizations with advanced needs</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Pro</li>
+                        <li>Dedicated support</li>
+                        <li>SLA guarantee</li>
+                        <li>Custom integrations</li>
+                        <li>On-premise deployment</li>
+                        <li>Training & onboarding</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="use-cases">
+            <h2 class="section-title">Use Cases</h2>
+            <p class="section-subtitle">Unlock productivity with intelligent automation</p>
+            <div class="use-cases-grid">
+                <div class="use-case-card animate-in">
+                    <h3>📋 Task Automation</h3>
+                    <p>Automate repetitive tasks, send reminders, and manage schedules with natural language commands</p>
+                </div>
+                <div class="use-case-card animate-in delay-1">
+                    <h3>🔍 Research Assistant</h3>
+                    <p>Get instant answers from web, search academic papers, and extract information from documents</p>
+                </div>
+                <div class="use-case-card animate-in delay-2">
+                    <h3>💬 Smart Conversations</h3>
+                    <p>Engage in natural, contextual conversations with memory and personality</p>
+                </div>
+                <div class="use-case-card animate-in delay-3">
+                    <h3>🎨 Content Creation</h3>
+                    <p>Generate text, summarize documents, and create content across multiple platforms</p>
+                </div>
+                <div class="use-case-card animate-in delay-4">
+                    <h3>🌐 Browser Control</h3>
+                    <p>Automate web interactions, fill forms, take screenshots, and test applications</p>
+                </div>
+                <div class="use-case-card animate-in delay-5">
+                    <h3>🏠 Smart Home</h3>
+                    <p>Connect to paired nodes, control devices, send notifications, and more</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with our team</p>
+            <form class="contact-form animate-in" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Tell us more..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <span>📧</span>
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="section" id="links">
+            <h2 class="section-title">Quick Links</h2>
+            <div class="links-grid">
+                <a href="https://github.com/clawdbot/clawdbot" target="_blank" class="link-card animate-in">
+                    <h3>📦 GitHub Repository</h3>
+                    <p>Source code, issues, and contributions</p>
+                </a>
+                <a href="https://docs.clawd.bot" target="_blank" class="link-card animate-in delay-1">
+                    <h3>📚 Documentation</h3>
+                    <p>Installation, configuration, and guides</p>
+                </a>
+                <a href="https://discord.com/invite/clawd" target="_blank" class="link-card animate-in delay-2">
+                    <h3>💬 Discord Community</h3>
+                    <p>Join discussions and get help</p>
+                </a>
+                <a href="https://clawdhub.com" target="_blank" class="link-card animate-in delay-3">
+                    <h3>🎯 ClawdHub</h3>
+                    <p>Discover skills and integrations</p>
+                </a>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="social-links">
@@ -1279,28 +1361,29 @@
             document.getElementById('theme-btn').textContent = '☀️';
         }
 
-        // Sidebar Toggle
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
+        // Mobile Navigation
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const overlay = document.getElementById('mobile-nav-overlay');
+            mobileNav.classList.toggle('active');
             overlay.classList.toggle('active');
-            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
         }
 
-        // Close sidebar
-        function closeSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.remove('open');
+        function closeMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const overlay = document.getElementById('mobile-nav-overlay');
+            mobileNav.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
         }
 
         // Set active menu item
         function setActive(element) {
-            document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
-            element.classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+            if (element.classList.contains('nav-link')) {
+                element.classList.add('active');
+            }
         }
 
         // Smooth scroll
@@ -1312,10 +1395,6 @@
                     const target = document.querySelector(href);
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        // Close sidebar on mobile after clicking
-                        if (window.innerWidth <= 1024) {
-                            closeSidebar();
-                        }
                     }
                 }
             });
@@ -1343,7 +1422,7 @@
 
         // Update active menu item on scroll
         const sections = document.querySelectorAll('.section[id], .page-header[id]');
-        const menuLinks = document.querySelectorAll('.sidebar-menu a[href^="#"]');
+        const navLinks = document.querySelectorAll('.nav-link');
 
         window.addEventListener('scroll', () => {
             let current = '';
@@ -1355,9 +1434,10 @@
                 }
             });
 
-            menuLinks.forEach(link => {
+            navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
+                const href = link.getAttribute('href');
+                if (href === `#${current}`) {
                     link.classList.add('active');
                 }
             });
