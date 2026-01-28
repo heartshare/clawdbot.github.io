@@ -49,10 +49,11 @@ A powerful AI assistant platform for automation, intelligent conversations, and 
 - **Full-Width Sidebar** - Full-screen sidebar on mobile
 
 ### Visual Enhancements
-- **Custom Scrollbars** - Always-visible slim scrollbars across entire site
+- **Custom Scrollbars** - Always-visible, prominent scrollbars across entire site (12px width)
 - **Blur Backdrops** - Modern backdrop-filter effects
 - **Gradient Accents** - Subtle gradient backgrounds
 - **Active States** - Visual feedback for active menu items
+- **Non-Sticky Header** - Fixed header that doesn't overlap content
 
 ## 📋 Sidebar Menu Structure
 
